@@ -1,0 +1,92 @@
+.patientsProfileCard {
+    border: 1px solid #edf0f5;
+    margin-top: -70px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.patientsStatus {
+    background: #d8f7e6;
+    color: #14a44d;
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.patientsAvatar {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.patientsMeta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.patientsMeta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.patients-tab-btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    background: #f2f2f2;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    /* Visual anchor for the absolute indicator */
+    isolation: isolate;
+    /* Creates a clean layering context */
+    transition: color 0.2s ease;
+}
+
+.patients-tab-btn:not(:last-child) {
+    border-right: 1px solid #e6e6e6;
+}
+
+/* Keeps the text cleanly layered over the sliding background */
+.tab-text {
+    position: relative;
+    z-index: 2;
+}
+
+.patients-tab-btn.active {
+    color: white;
+    /* Only change text color, background handled by motion div */
+}
+
+/* The fluid sliding block background element */
+.active-bg-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #4169b1;
+    z-index: 1;
+}
+
+.patientDetailsToggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s ease;
+}
+
+.patientDetailsToggle.rotated {
+    transform: rotate(180deg);
+}

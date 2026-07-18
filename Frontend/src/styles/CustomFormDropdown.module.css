@@ -1,0 +1,195 @@
+/* ==========================================================================
+   CORE COMPONENT STRUCTURE
+   ========================================================================== */
+
+.custom-dropdown-wrapper {
+  width: 100%;
+  position: relative;
+  font-family: "Roboto";
+  border-radius: 10px !important;
+}
+
+.custom-dropdown-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  border-radius: 10px !important;
+}
+
+/* ==========================================================================
+   INPUT TRIGGER BLOCK
+   ========================================================================== */
+
+.dropdown-trigger {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px !important;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-trigger:hover {
+  border-color: #b8b8b8;
+}
+
+.dropdown-placeholder {
+  color: #6f6f6f;
+  font-size: 15px;
+}
+
+.dropdown-icon {
+  transition: 0.2s ease;
+  color: #444;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   PORTAL DISPLAY MENU PANEL
+   ========================================================================== */
+
+.dropdown-menu-portal {
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 6px;
+  z-index: 999999 !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+
+  animation: dropdownSlideFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top center;
+  will-change: transform, opacity;
+}
+
+/* .dropdown-menu-portal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu-portal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-menu-portal::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 10px;
+}
+
+.dropdown-menu-portal::-webkit-scrollbar-thumb:hover {
+  background: #a9a9a9;
+} */
+
+@keyframes dropdownSlideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scaleY(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* ==========================================================================
+   DEFAULT STATE FOR ALL OPTIONS ON LOAD (SEMIBOLD & BLACK MUTED)
+   ========================================================================== */
+
+.dropdown-option {
+  padding: 4px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  width: 100% !important;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, color 0.15s ease, font-weight 0.15s ease;
+  /* Matches requirement: By default, everything is black semibold text-muted */
+  font-weight: 600 !important;
+  color: #555555 !important;
+}
+
+/* ==========================================================================
+   HOVER INTERACTION RULES
+   ========================================================================== */
+
+/* 1. Normal list items: Light blue background, pure white text, and bold weight on hover */
+.dropdown-option:not(.placeholder-option):not(.selected-option):hover {
+  background-color: #b5c4dc !important;
+  /* Requested light blue tint */
+  color: #ffffff !important;
+  /* Crisp white text */
+  font-weight: 700 !important;
+  /* Pure bold weight */
+}
+
+/* 2. Placeholder item: Light blue background, bold black/muted text on hover */
+.dropdown-option.placeholder-option:not(.selected-option):hover {
+  background-color: #b5c4dc !important;
+  /* Same light blue background tint */
+  color: #67626b !important;
+  /* Kept bold black/muted dark slate color */
+  font-weight: 700 !important;
+  /* Bold weight */
+}
+
+/* ==========================================================================
+   ACTIVE SELECTION OVERRIDES (WHEN SELECTED BY USER)
+   ========================================================================== */
+
+/* Keeps the currently chosen dashboard item highlighted clean in brand blue */
+.selected-option,
+.dropdown-menu-portal .dropdown-option.selected-option {
+  background-color: #3E64AB !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   VALIDATION ERROR FIELD HIGHLIGHTS
+   ========================================================================== */
+
+.dropdown-error .dropdown-trigger {
+  border-color: #dc2626;
+}
+
+.dropdown-error-text {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #dc2626;
+}
+
+.dropdown-disabled .dropdown-trigger {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   FOCUS OUTLINE ACCESSIBILITY OVERRIDES
+   ========================================================================== */
+
+/* Removes the harsh default browser outline on click or window focus */
+.dropdown-trigger:focus,
+.dropdown-trigger:focus-visible {
+  outline: none !important;
+}

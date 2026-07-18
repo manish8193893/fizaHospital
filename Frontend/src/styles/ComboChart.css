@@ -1,0 +1,67 @@
+/* ComboChart.css */
+
+.combo-chart-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 20px 24px;
+    box-sizing: border-box;
+}
+
+.combo-chart-header {
+    margin-bottom: 20px;
+}
+
+.combo-chart-header h3 {
+    margin: 0;
+    color: #101828;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.combo-chart-wrapper {
+    width: 100%;
+    max-height: 250px !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .combo-chart-card {
+        padding: 16px;
+    }
+
+    .combo-chart-wrapper {
+        height: 300px;
+    }
+}
+
+.custom-week-select {
+    width: fit-content;
+    height: 35px!important;
+    padding: 0 40px 0 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #dfe5f1;
+    color: #3d63b8;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%233d63b8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    border-left: 1px solid transparent;
+    box-sizing: border-box;
+}
+
+.custom-week-select:focus {
+    outline: none;
+}

@@ -1,0 +1,125 @@
+.patient-details-card {
+    margin-top: -70px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.patient-tab-btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    background: #f2f2f2;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    /* Visual anchor for the absolute indicator */
+    isolation: isolate;
+    /* Creates a clean layering context */
+    transition: color 0.2s ease;
+}
+
+.patient-tab-btn:not(:last-child) {
+    border-right: 1px solid #e6e6e6;
+}
+
+/* Keeps the text cleanly layered over the sliding background */
+.tab-text {
+    position: relative;
+    z-index: 2;
+}
+
+.patient-tab-btn.active {
+    color: white;
+    /* Only change text color, background handled by motion div */
+}
+
+/* The fluid sliding block background element */
+.active-bg-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #4169b1;
+    z-index: 1;
+}
+
+.patient-content-wrapper {
+    border: 1px solid #e9e9e9;
+    border-top: 0;
+}
+
+.medicalTabsWrapper {
+    position: relative;
+}
+
+/* Container padding to make exact room for the buttons at the edges */
+.swiper {
+    padding-inline: 45px !important;
+    /* Increased padding slightly for clear separation */
+    position: relative;
+}
+
+/* Base styles for both navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: #3E64AB;
+    color: #ffffff !important;
+    width: 25px !important;
+    min-width: 35px !important;
+    min-height: 100% !important;
+    padding: 12px !important;
+    /* border-radius: 6px; */
+    top: 50% !important;
+    transform: translateY(-50%);
+    margin-top: 0 !important;
+}
+
+/* Shrink the arrow font size */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 8px !important;
+    font-weight: 900 !important;
+}
+
+/* Snap the left button to the absolute left edge */
+.swiper-button-prev {
+    left: 0px !important;
+}
+
+/* Snap the right button to the absolute right edge */
+.swiper-button-next {
+    right: 0px !important;
+}
+
+/* Optional: Hide buttons when they reach the beginning or end */
+.swiper-button-disabled {
+    opacity: 1 !important;
+    cursor: pointer !important;
+}
+
+/* Your existing button styles */
+.medicalTabBtn {
+    height: 56px;
+    border: 1px solid #d4d3d3;
+    border-radius: 9px;
+    padding: 6px 16px;
+    background: #fff;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.medicalTabBtn.active {
+    transform: translateY(-4px);
+    /* Moves the button up by 4 pixels */
+    box-shadow: 0 8px 24px rgba(23, 23, 24, 0.15);
+    /* Softens and extends the shadow downward */
+    border-color: transparent;
+    /* Optional: hides border to make the lift cleaner */
+}

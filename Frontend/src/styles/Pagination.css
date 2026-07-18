@@ -1,0 +1,113 @@
+/* Container Box Frame Setup Rule blocks */
+.pagination-container {
+  background-color: #FFFFFF !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+
+  width: 100% !important;
+  height: auto !important;
+  padding: 14px 24px 16px 24px !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* Control Elements structural layer alignments */
+.pagination-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-direction: row !important;
+}
+
+/* Base interactive targets layouts mapping style targets */
+.pagination-btn {
+  width: 32px !important;
+  height: 32px !important;
+  border: 1.5px solid rgba(41, 37, 36, 0.281) !important;
+  border-radius: 10px !important;
+  padding: 6px !important;
+  color: #7D7A79 !important;
+  background-color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* FIXED: Added :not(.active) here so the active page doesn't change on hover */
+.pagination-btn:hover:not(:disabled):not(.active) {
+  background-color: #f5f5f4 !important;
+}
+
+.pagination-btn:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.4 !important;
+}
+
+/* Highlighting focus states overrides */
+.pagination-btn.active {
+  background-color: #3E64AB !important;
+  color: #ffffff !important;
+  border-color: #3E64AB !important;
+}
+
+.pagination-btn-arrow {
+  border-color: #3E64AB !important;
+  color: #3E64AB !important;
+}
+
+.pagination-btn:hover:not(:disabled):not(.active) {
+  background-color: #f5f5f4 !important;
+}
+
+.pagination-ellipsis {
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #7D7A79 !important;
+  font-size: 14px !important;
+  user-select: none !important;
+}
+
+/* Metadata summary alignment sections block rule configurations */
+.pagination-right-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-direction: row !important;
+}
+
+.pagination-select-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-direction: row !important;
+}
+
+.pagination-info {
+  color: #7D7A79 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+}
+
+.pagination-select-input {
+  width: auto !important;
+  height: auto !important;
+  padding: 4px 8px 4px 8px !important;
+  font-size: 14px !important;
+  color: #7D7A79 !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(41, 37, 36, 0.281) !important;
+  outline: none !important;
+}

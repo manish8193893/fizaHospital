@@ -1,0 +1,145 @@
+/* ==========================================================================
+   NEW: NEXT PATIENT TIMELINE CARD
+   ========================================================================== */
+.next-patient-card {
+    /* width: 352px !important; */
+    width: 100% !important;
+    height: 228px !important;
+    border-radius: 6px !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid rgba(41, 37, 36, 0.08) !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+    font-family: system-ui, -apple-system, sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+/* Header row (Icon, Title, More options icon) */
+.npc-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+}
+
+.npc-header-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: rgba(47, 43, 61, 0.90) !important;
+    /* #2F2B3D with 90% opacity */
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.npc-more-btn {
+    background: none !important;
+    border: none !important;
+    color: rgba(47, 43, 61, 0.50) !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+}
+
+/* Timeline Layout Layer */
+.npc-timeline-body {
+    display: flex !important;
+    gap: 12px !important;
+    flex: 1 !important;
+    position: relative !important;
+}
+
+/* Tracking indicator lines */
+.npc-timeline-track {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 12px !important;
+    padding-top: 4px !important;
+}
+
+.npc-dot {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: #7367F0 !important;
+}
+
+.npc-line {
+    width: 2px !important;
+    flex: 1 !important;
+    background-color: #E8ECF1 !important;
+    margin-top: 4px !important;
+}
+
+/* Content items configuration stack */
+.npc-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    flex: 1 !important;
+}
+
+.npc-department {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: rgba(47, 43, 61, 0.90) !important;
+    /* #2F2B3D with 90% opacity */
+    line-height: 22px!important;
+    margin: 0 !important;
+}
+
+.npc-doctor {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: rgba(47, 43, 61) !important;
+    /* #2F2B3D with 90% opacity */
+    margin: 0 0 6px 0 !important;
+}
+
+.npc-meta-label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: rgba(47, 43, 61, 0.70) !important;
+    /* #2F2B3D with 70% opacity */
+    margin: 0 !important;
+}
+
+.npc-meta-value {
+    color: rgba(47, 43, 61, 0.70) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    /* #2F2B3D with 70% opacity */
+}
+
+/* Footer control operations group */
+.npc-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding-left: 24px !important;
+    box-sizing: border-box !important;
+}
+
+.npc-btn-checkin {
+    background: none !important;
+    border: none !important;
+    color: #2563EB !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+}
+
+.npc-btn-skip {
+    background: none !important;
+    border: none !important;
+    color: #E31621 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+}

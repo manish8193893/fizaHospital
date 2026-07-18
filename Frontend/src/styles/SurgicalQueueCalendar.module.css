@@ -1,0 +1,305 @@
+/* ===========================================
+   Department Checkbox
+=========================================== */
+
+.departmentItem {
+    cursor: pointer;
+    user-select: none;
+    transition: .25s;
+}
+
+.departmentCheckbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s ease;
+    flex-shrink: 0;
+}
+
+.departmentCheckbox i {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.departmentName {
+    font-size: 15px;
+    font-weight: 500;
+    color: #2d3436;
+}
+
+/*=====================================================
+    FULLCALENDAR OVERRIDES
+======================================================*/
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-event),
+:global(.fc-timeGridWeek-view) :global(.fc-timegrid-event),
+:global(.fc-timeGridDay-view) :global(.fc-timegrid-event),
+:global(.fc-list-event) {
+    border: none !important;
+    background: transparent !important;
+}
+
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-event) {
+    padding: 0 !important;
+    margin-bottom: 4px;
+}
+
+:global(.fc-dayGridMonth-view) :global(.fc-event-main),
+:global(.fc-timeGridWeek-view) :global(.fc-event-main),
+:global(.fc-timeGridDay-view) :global(.fc-event-main) {
+    padding: 0 !important;
+}
+
+:global(.fc-list-event) td {
+    border: none !important;
+    padding: 8px 10px !important;
+}
+
+:global(.fc-list-day-cushion) {
+    background: #f8f9fa !important;
+    padding: 10px 15px !important;
+}
+
+/*=====================================================
+    SHARED EVENT CARD STYLES
+======================================================*/
+.monthEventCard,
+.weekEventCard,
+.dayEventCard,
+.listEventCard {
+    color: #fff;
+    transition: 0.25s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Base text styles */
+.monthEventTime,
+.weekEventTime,
+.dayEventTime,
+.listEventTime {
+    font-weight: 700;
+}
+
+.monthEventPatient,
+.weekEventPatient,
+.dayEventPatient,
+.listEventPatient {
+    font-weight: 600;
+}
+
+/* Truncation for Month view specifically */
+.monthEventPatient,
+.monthEventDepartment,
+.monthEventDoctor {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*=====================================================
+    VIEW-SPECIFIC SIZING
+======================================================*/
+/* Month */
+.monthEventCard {
+    border-radius: 6px;
+    padding: 6px;
+    min-height: 78px;
+}
+
+.monthEventTime,
+.monthEventDepartment,
+.monthEventDoctor {
+    font-size: 11px;
+}
+
+.monthEventPatient {
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.monthEventDepartment,
+.monthEventDoctor {
+    margin-top: 2px;
+}
+
+:global(.fc) :global(.fc-daygrid-day-frame) {
+    min-height: 110px;
+}
+
+:global(.fc) :global(.fc-daygrid-day-events) {
+    margin-bottom: 0 !important;
+}
+
+:global(.fc) :global(.fc-daygrid-day-bottom) {
+    display: none;
+}
+
+/* Month view - Date in top-left with padding */
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-day-top) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 6px;
+}
+
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-day-number) {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none !important;
+}
+
+/* Week */
+.weekEventCard {
+    padding: 0px 5px;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.weekEventTime,
+.weekEventDepartment,
+.weekEventDoctor {
+    font-size: 11px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.weekEventPatient {
+    font-size: 11px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.weekEventDepartment,
+.weekEventDoctor {
+    margin-top: 2px;
+}
+
+/* Day */
+.dayEventCard {
+    border-radius: 0px;
+    padding: 3px 8px;
+    color: white;
+}
+
+.dayEventTime,
+.dayEventDepartment,
+.dayEventDoctor {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.dayEventPatient {
+    font-size: 12px;
+    margin-top: 1px;
+}
+
+/* List */
+.listEventCard {
+    border-radius: 0px;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.listEventTime,
+.listEventDepartment,
+.listEventDoctor {
+    font-size: 12px;
+}
+
+.listEventPatient {
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.listEventDepartment {
+    margin-top: 4px;
+}
+
+.listEventDoctor {
+    margin-top: 2px;
+}
+
+/*=====================================================
+    SCROLLBARS
+======================================================*/
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-day-events) {
+    max-height: 95px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 2px;
+}
+
+:global(.fc) :global(.fc-scroller) {
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+}
+
+/* Shared Webkit Scrollbar */
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-day-events)::-webkit-scrollbar {
+    width: 5px;
+}
+
+:global(.fc) :global(.fc-scroller)::-webkit-scrollbar {
+    width: 7px;
+}
+
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-day-events)::-webkit-scrollbar-thumb,
+:global(.fc) :global(.fc-scroller)::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 20px;
+}
+
+:global(.fc-dayGridMonth-view) :global(.fc-daygrid-day-events)::-webkit-scrollbar-track,
+:global(.fc) :global(.fc-scroller)::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*=====================================================
+    COMMON STYLING
+======================================================*/
+:global(.fc-toolbar-title) {
+    font-size: 22px !important;
+    font-weight: 600;
+}
+
+:global(.fc-col-header-cell) {
+    background: #f8f9fa;
+}
+
+:global(.fc-day-today) {
+    background: #f7fbff !important;
+}
+
+:global(.fc-event) {
+    box-shadow: none !important;
+}
+
+:global(.fc-button) {
+    text-transform: capitalize !important;
+}
+
+/*=====================================================
+    ALL-DAY SECTION HEIGHT REDUCTION
+======================================================*/
+:global(.fc-timeGridWeek-view) :global(.fc-daygrid),
+:global(.fc-timeGridDay-view) :global(.fc-daygrid) {
+    height: auto !important;
+}
+
+:global(.fc-timeGridWeek-view) :global(.fc-daygrid-day-frame),
+:global(.fc-timeGridDay-view) :global(.fc-daygrid-day-frame) {
+    min-height: 35px !important;
+}
+
+:global(.fc-timeGridWeek-view) :global(.fc-daygrid-day-events),
+:global(.fc-timeGridDay-view) :global(.fc-daygrid-day-events) {
+    max-height: none !important;
+}

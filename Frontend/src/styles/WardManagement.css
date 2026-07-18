@@ -1,0 +1,329 @@
+/**************************************************
+    Name : Manish Kumar
+    Date : 23/06/2026
+    Purpose : WARD MANAGEMENT DASHBOARD CSS
+**************************************************/
+.available {
+    background: #1fc16b !important;
+}
+
+.occupied {
+    background: #FB2C36 !important;
+}
+
+.maintenance {
+    background: #F0B100 !important;
+}
+
+.dottedColorCircle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.wardTabsWrapper {
+    position: relative !important;
+    max-width: 500px !important;
+    max-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    background: rgba(224, 222, 222, 0.274) !important;
+}
+
+.wardTabBtn {
+    border: 1px solid #d9e2f2 !important;
+    background: #fff !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    padding: 0 16px !important;
+    font-size: 12px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-weight: 500 !important;
+    color: #495057 !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+    transform: none !important;
+    translate: none !important;
+    transition: all 0.25s ease !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+}
+
+.wardTabBtn.active {
+    background: #3E64AB !important;
+    border-color: #3E64AB !important;
+    color: #ffffff !important;
+    transform: none !important;
+    translate: none !important;
+    top: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+.slider .swiper-wrapper {
+    align-items: center !important;
+}
+
+.slider .swiper-slide {
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
+}
+
+.slider .swiper-button-prev,
+.slider .swiper-button-next {
+    width: 28px !important;
+    height: 28px !important;
+    background: #3E64AB !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin-top: 0 !important;
+}
+
+.slider .swiper-button-prev::after,
+.slider .swiper-button-next::after {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.slider .swiper-button-prev:hover,
+.slider .swiper-button-next:hover {
+    background: #3E64AB !important;
+    border-color: #3E64AB !important;
+}
+
+.slider .swiper-button-disabled {
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+}
+
+.bed-card {
+    position: relative;
+    border-radius: 16px;
+    padding: 12px 16px;
+    min-height: 94px;
+    max-height: 113px;
+    transition: all 0.25s ease;
+}
+
+.available-bed {
+    border: 1px solid rgb(31, 193, 107);
+}
+
+.available-bed:hover {
+    border: 1px solid rgb(31, 193, 107) !important;
+}
+
+.available-number {
+    color: #1FC16B !important;
+}
+
+.available-bedIcon svg {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(84%) saturate(510%) hue-rotate(101deg) brightness(92%) contrast(89%);
+}
+
+.occupied-bed {
+    border: 1px solid #FB2C36 !important;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.occupied-bed:hover {
+    border: 1px solid rgb(251, 44, 54) !important;
+}
+
+.occupied-number {
+    color: #FB2C36 !important;
+}
+
+.occupied-bedIcon svg {
+    filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2872%) hue-rotate(338deg) brightness(103%) contrast(97%);
+}
+
+.maintenance-bed {
+    border: 1px solid #F0B100;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.maintenance-bed:hover {
+    border: 1px solid #F0B100 !important;
+}
+
+.maintenance-number {
+    color: #F0B100 !important;
+}
+
+.maintenance-bedIcon svg {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(92%) saturate(1036%) hue-rotate(8deg) brightness(97%) contrast(101%);
+}
+
+.bed-patient {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.bed-days {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.maintenance-text {
+    color: #F0B100;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.bed-status-icon {
+    position: absolute;
+    top: -10px;
+    right: -7px;
+    z-index: 2;
+}
+
+.bed-status-icon .available-icon {
+    color: white;
+    background-color: #1FC16B;
+}
+
+.bed-status-icon .occupied-icon {
+    color: white;
+    background-color: #FB2C36;
+}
+
+.bed-status-icon .maintenance-icon {
+    color: white;
+    background-color: #F0B100;
+}
+
+.floor-info-bar {
+    background: #f8fafc;
+    border: 1px solid #edf1f7;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+}
+
+.floor-info-bar h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.col-bed-5 {
+    width: 20%;
+}
+
+@media (max-width: 1200px) {
+    .col-bed-5 {
+        width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-bed-5 {
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-bed-5 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-bed-5 {
+        width: 100%;
+    }
+}
+
+/**************************************************
+    Name : Manish Kumar
+    Date : 23/06/2026
+    Purpose : WARD MANAGEMENT STEPPER CSS
+**************************************************/
+.ward-step-active {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 6px solid #3E64AB;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ward-step-inactive {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    border: 6px solid #c2c3c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ward-step-completed {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #3e63b6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/**************************************************
+    Name : Manish Kumar
+    Date : 30/06/2026
+    Purpose : WARD SETTINGS CSS
+**************************************************/
+
+.ward-Tab-Btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    background: #f2f2f2;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    isolation: isolate;
+    transition: color 0.2s ease;
+}
+
+.ward-Tab-Btn:not(:last-child) {
+    border-right: 1px solid #e6e6e6;
+}
+
+.ward-Tab-Text {
+    position: relative;
+    z-index: 2;
+}
+
+.ward-Tab-Btn.active {
+    color: white;
+}
+
+.ward-BgIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #3E64AB!important;
+    z-index: 1;
+}

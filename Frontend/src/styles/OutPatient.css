@@ -1,0 +1,74 @@
+/* OutPatient.css */
+
+.scheduler-wrapper {
+    min-height: 700px;
+}
+
+.fc {
+    height: 700px;
+}
+
+.clinic-option {
+    cursor: pointer;
+}
+
+.confirmation-note {
+    background: #eaf2ff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* 1. Target the Title Text (Red Circle Area) */
+.fc .fc-toolbar-title {
+    font-size: 18px;
+    /* Set your preferred font size */
+    color: #3E64AB;
+    /* Set your preferred text color */
+    font-weight: 600;
+    /* Optional: Adjusts text weight */
+}
+
+/* 2. Target the Navigation & View Buttons (Red Arrow Area) */
+/* This targets standard, active, hovered, and focused button states */
+.fc .fc-button-primary,
+.fc .fc-button-primary:hover,
+.fc .fc-button-primary:focus,
+.fc .fc-button-primary:active,
+.fc .fc-button-primary:disabled {
+    background-color: #3E64AB !important;
+    border-color: #3E64AB !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    /* Removes default Bootstrap-like focus shadows */
+}
+
+/* 3. Style for the Active/Selected View Button (Optional) */
+/* If you want the currently active view button to look slightly different */
+.fc .fc-button-primary.fc-button-active {
+    background-color: #2a477d !important;
+    /* Darker blue for active state */
+    border-color: #2a477d !important;
+}
+
+/* 1. Style Header Week Names (Sun, Mon, etc.) */
+.fc .fc-col-header-cell a {
+    text-decoration: none !important;
+    /* Removes the underline */
+    color: #3E64AB !important;
+    /* Sets week name text to your blue */
+}
+
+/* 2. Style Grid Date Numbers (1, 2, 3, etc.) */
+.fc .fc-daygrid-day-number {
+    text-decoration: none !important;
+    /* Removes the underline */
+    color: #000000 !important;
+    /* Sets date text to black */
+}
+
+/* 3. Handle Hover States (Optional) */
+/* Ensures underlines do not reappear when you move your mouse over them */
+.fc .fc-col-header-cell a:hover,
+.fc .fc-daygrid-day-number:hover {
+    text-decoration: none !important;
+}

@@ -1,0 +1,79 @@
+/******************************************
+    Name : Manish Kumar
+    Date : 04/06/2026
+    Purpose : Radiology Dashboard CSS
+******************************************/
+.timeline-item {
+    position: relative;
+    padding-bottom: 28px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    background: #7367f0;
+    border-radius: 50%;
+    margin-top: 6px;
+    position: relative;
+}
+
+.timeline-dot::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 4px;
+    width: 2px;
+    height: 55px;
+    background: #e9e9e9;
+}
+
+.timeline-item:last-child .timeline-dot::after {
+    display: none;
+}
+
+/******************************************
+    Name : Manish Kumar
+    Date : 04/06/2026
+    Purpose : Radiology Request CSS
+******************************************/
+.hide-time-icon::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+    -webkit-appearance: none;
+}
+
+.hide-time-icon::-webkit-inner-spin-button,
+.hide-time-icon::-webkit-clear-button {
+    display: none;
+}
+
+.hide-time-icon {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.input-group .form-control {
+    height: 48px;
+    border-right: 0;
+}
+
+.input-group .dropdown-toggle {
+    min-width: 140px;
+    border-left: 0;
+    background: #fff;
+    color: #495057;
+}
+
+.input-group .dropdown-toggle:focus,
+.input-group .form-control:focus {
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    width: 140px;
+}

@@ -1,0 +1,233 @@
+/**************************************************
+    Name : Manish Kumar
+    Date : 13/06/2026
+    Purpose : Pharmacy Dashboard CSS
+**************************************************/
+.stock-item {
+    max-height: 70px;
+    border: 1px solid #FFF085;
+    background: #FEFCE8;
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+/**************************************************
+    Name : Manish Kumar
+    Date : 13/06/2026
+    Purpose : Out-Patient Sale CSS
+**************************************************/
+.OutPatientProfileCard {
+    border: 1px solid #edf0f5;
+    margin-top: -70px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.OutPatientStatus {
+    background: #d8f7e6;
+    color: #14a44d;
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.OutPatientAvatar {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.OutPatientMeta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.OutPatientMeta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/**************************************************
+    Name : Manish Kumar
+    Date : 19/06/2026
+    Purpose : Proceed Modal CSS
+**************************************************/
+.medicine-check-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #b8c2d1;
+    background: #fff;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.medicine-check-btn i {
+    font-size: 14px;
+}
+
+.medicine-check-btn:hover {
+    border-color: #4168b2;
+}
+
+.medicine-check-btn.active {
+    background: #4168b2;
+    border-color: #4168b2;
+    color: #fff;
+}
+
+.medicine-check-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.medicine-check-btn.active:disabled {
+    background: #4168b2;
+    border-color: #4168b2;
+    color: #fff;
+}
+
+.medicine-table {
+    background: #fff;
+    border: 1px solid #3E64AB !important;
+    overflow: hidden;
+}
+
+.medicine-table table {
+    margin-bottom: 0;
+}
+
+.medicine-table thead th {
+    background: #3E64AB;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    border-right: 1px solid #3E64AB !important;
+    padding: 14px 16px;
+}
+
+.medicine-table tbody td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+.medicine-table tbody tr {
+    transition: background 0.2s ease;
+    text-align: center;
+}
+
+.medicine-table tbody tr:hover {
+    background: #fafbfc;
+}
+
+.medicine-table .customInput {
+    width: 100%;
+    max-height: 42px;
+    border-radius: 8px;
+}
+
+.payment-method-card {
+    width: 100%;
+    border: 2px solid #dce2ea;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.payment-method-card:hover {
+    border-color: #4168b2;
+}
+
+.payment-method-card.active {
+    border-color: #3E64AB;
+    color: #3E64AB;
+    background: rgba(65, 104, 178, 0.05);
+}
+
+.payment-summary-card {
+    border-top: 1px solid darkgray;
+}
+
+.payment-method-card .total-amount {
+    background: #0477BF1A !important;
+    color: #3E64AB !important;
+}
+
+.payment-success-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(31, 193, 107, 0.15);
+    color: #1FC16B;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-success-icon i {
+    font-size: 42px;
+}
+
+/**************************************************
+    Name : Manish Kumar
+    Date : 21/06/2026
+    Purpose : Receive Without PO toggle CSS
+**************************************************/
+.form-check-input:checked {
+    background-color: #3E64AB !important;
+    border-color: #3E64AB !important;
+}
+
+.form-check-input:focus {
+    border-color: #3E64AB !important;
+    box-shadow: 0 0 0 0.2rem rgba(62, 100, 171, 0.25) !important;
+}
+
+.supplierStatusBtn {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    background-color: #e6effd !important;
+    color: #1a56db !important;
+    padding: 10px 30px;
+}
+
+.suppliercategoryBtn {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 18px;
+    background-color: #d1fae5 !important;
+    color: #059669 !important;
+    padding: 10px 30px;
+}

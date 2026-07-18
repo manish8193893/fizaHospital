@@ -1,0 +1,385 @@
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Accounting Setup page styling
+**************************************************************/
+.pageWrapper {
+    width: 100%;
+    height: fit-content;
+}
+
+.stepperSection {
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentSection {
+    width: 100%;
+    height: fit-content;
+    background: white;
+    border-radius: 12px;
+}
+
+.contentSection h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #0c0c0cee !important;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Multiple button wrapper
+**************************************************************/
+
+.multiButtonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.nextBtn {
+    background: #3e64ab;
+    height: 48px;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Hospital info main container
+**************************************************************/
+
+.hospitalInfoContainer {
+    width: 100%;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Top centered heading
+**************************************************************/
+
+.hospitalInfoHeader {
+    width: 100%;
+    text-align: center;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Main content wrapper
+**************************************************************/
+
+.hospitalInfoContent {
+    width: 100%;
+    flex-grow: 1;
+}
+
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Form title
+**************************************************************/
+
+.formTitle {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.formSubtitle {
+    color: #6B7280;
+    font-size: 15px;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Form rows
+**************************************************************/
+
+.formRow {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.formGroup {
+    flex: 1;
+}
+
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Labels
+**************************************************************/
+
+.customLabel {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Input wrapper
+**************************************************************/
+
+.inputWrapper {
+    position: relative;
+}
+
+.inputWrapper i {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    color: #94A3B8;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Hide default date icon
+**************************************************************/
+
+.customInput[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Remove default date appearance
+**************************************************************/
+
+.customInput[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Custom date icon
+**************************************************************/
+
+.dateIcon {
+    cursor: pointer;
+    color: #94A3B8;
+    font-size: 18px;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Inputs
+**************************************************************/
+
+.customInput {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #D8E0E8;
+    border-radius: 12px;
+    padding: 0 46px 0 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.customInput:focus {
+    border-color: #3E64AB;
+    box-shadow: 0px 0px 0px 4px rgba(62, 100, 171, 0.08);
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Button
+**************************************************************/
+
+.buttonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Custom textarea
+**************************************************************/
+
+.customTextarea {
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #D8E0E8;
+    border-radius: 12px;
+    padding: 16px 46px 16px 16px;
+    outline: none;
+    resize: none;
+    transition: 0.3s ease;
+}
+
+.customTextarea:focus {
+    border-color: #3E64AB;
+    box-shadow: 0px 0px 0px 4px rgba(62, 100, 171, 0.08);
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Textarea icon
+**************************************************************/
+
+.textareaIcon {
+    position: absolute;
+    top: 18px !important;
+    right: 16px;
+    transform: unset !important;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Responsive
+**************************************************************/
+
+@media (max-width: 992px) {
+
+    .hospitalInfoContent {
+        flex-direction: column;
+    }
+
+    .formRow {
+        flex-direction: column;
+    }
+
+    .buttonWrapper {
+        justify-content: center;
+    }
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 24/05/2026
+    Purpose : Outline button
+**************************************************************/
+
+.outlineBtn {
+    height: 48px;
+    border: 1px solid #3E64AB;
+    border-radius: 12px;
+    background: white;
+    color: #3E64AB;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Finish Setup */
+/******************************************************
+    Name : Manish Kumar
+    Date : 23/05/2026
+    Purpose : Finish content wrapper
+**************************************************************/
+
+.finishContentWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 23/05/2026
+    Purpose : Finish image
+**************************************************************/
+
+.finishImage {
+    width: 180px;
+    height: 141px;
+    object-fit: contain;
+    margin-bottom: 24px;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 23/05/2026
+    Purpose : Finish heading
+**************************************************************/
+
+.finishHeading {
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    color: #0c0c0cd2 !important;
+    margin-bottom: 13px;
+}
+
+/******************************************************
+    Name : Manish Kumar
+    Date : 23/05/2026
+    Purpose : Finish paragraph
+**************************************************************/
+
+.finishPara {
+    font-size: 12px !important;
+    color: #6B7280 !important;
+}
+
+.finishOutlineBtn {
+    height: 48px !important;
+    border: 1px solid #3E64AB;
+    border-radius: 12px;
+    background: white;
+    color: #3E64AB;
+    font-size: 15px;
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.finishOutlineBtn:hover {
+    background: #F3F7FF;
+}
+
+.finishNextBtn {
+    background: #3e64ab;
+    color: white;
+    border: none;
+    height: 48px !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}

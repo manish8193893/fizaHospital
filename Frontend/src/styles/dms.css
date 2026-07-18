@@ -1,0 +1,38 @@
+/* -------------------------------------------------------------------------- */
+/*                                   DMS                                      */
+/* -------------------------------------------------------------------------- */
+
+.DMS-Stats {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                RESPONSIVE                                  */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+    .DMS-Stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .DMS-Stats {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .DMS-Stats {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

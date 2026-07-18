@@ -1,0 +1,119 @@
+/* Base Parent Container Layout Frame */
+.patient-card-container {
+  width: 100% !important;
+  height: 228px !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  background-color: #FFFFFF !important;
+  color: #454852 !important; /* Base typography color match */
+  border: 1px solid rgba(41, 37, 36, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Selected/Active Container State Mutation Overrides */
+.patient-card-container.active {
+  background-color: #3E64AB !important;
+  color: #FFFFFF !important;
+  border-color: #3E64AB !important;
+  box-shadow: 0 4px 12px rgba(62, 100, 171, 0.2) !important;
+  cursor: default !important;
+}
+
+/* Image Frame Container Block Elements */
+.patient-card-img-wrapper {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #F2F2FF !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.patient-card-container.active .patient-card-img-wrapper {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.patient-card-thumbnail {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Middle Text Metadata Segmentation */
+.patient-card-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.patient-card-title {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: #454852 !important; /* Enforces title strings to #454852 */
+  margin: 0 !important;
+}
+
+.patient-card-container.active .patient-card-title {
+  color: #FFFFFF !important; /* Inverts color cleanly to white when card is selected */
+}
+
+.patient-card-count {
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  color: #454852 !important; /* Enforces metric strings to #454852 */
+  margin: 0 !important;
+}
+
+/* Clinic Available Special Case Override Accent (only if inactive) */
+.patient-card-container.variant-available:not(.active) .patient-card-count {
+  color: #1FA76B !important;
+}
+
+.patient-card-container.active .patient-card-count {
+  color: #FFFFFF !important;
+}
+
+/* Bottom Actions Trigger Component Elements */
+.patient-card-btn {
+  width: 100% !important;
+  height: 40px !important;
+  border-radius: 6px !important;
+  border: 1px solid #3E64AB !important;
+  background-color: #FFFFFF !important;
+  color: #3E64AB !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 8px !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, color 0.2s ease !important;
+}
+
+.patient-card-container.active .patient-card-btn {
+  border-color: #FFFFFF !important;
+  color: #454852 !important;
+}
+
+/* Locks button background completely solid white to override blue hover flashes */
+.patient-card-btn:hover {
+  background-color: #FFFFFF !important;
+}
+
+.patient-card-container.active .patient-card-btn:hover {
+  background-color: #FFFFFF !important;
+}

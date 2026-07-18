@@ -1,0 +1,76 @@
+/* ===========================
+   Breadcrumb
+=========================== */
+
+.breadcrumb-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.custom-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+/* Separator */
+.custom-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    padding: 0 10px;
+    color: #adb5bd;
+    content: "/";
+}
+
+/* Normal breadcrumb */
+.custom-breadcrumb .breadcrumb-item {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Links */
+.custom-breadcrumb .breadcrumb-item a {
+    color: #3e64ab;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+    color: #284b90;
+    text-decoration: underline;
+}
+
+/* Current page */
+.custom-breadcrumb .breadcrumb-item.current-page {
+    color: #212529;
+    font-weight: 500;
+}
+
+/* Bootstrap active override */
+.custom-breadcrumb .breadcrumb-item.active {
+    color: #212529;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .breadcrumb-wrapper {
+        min-height: 40px;
+        max-height: 40px;
+        padding: 0 16px;
+    }
+
+    .custom-breadcrumb .breadcrumb-item {
+        font-size: 13px;
+    }
+
+    .custom-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        padding: 0 6px;
+    }
+}

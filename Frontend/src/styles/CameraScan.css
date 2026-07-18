@@ -1,0 +1,99 @@
+.scan-qr-box {
+    height: 130px;
+    border: 2px dashed #3E64AB;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.qr-icon {
+    font-size: 42px;
+    color: #2d3f73;
+}
+
+.scan-title {
+    margin-top: 10px;
+    font-size: 22px;
+    color: #444;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #d9d9d9;
+}
+
+.or-divider span {
+    color: #666;
+    font-size: 12px;
+}
+
+.appointment-label {
+    float: right;
+    margin-bottom: 8px;
+}
+
+.camera-modal-dialog {
+    max-width: fit-content;
+}
+
+.camera-modal-body {
+    position: relative;
+    padding: 20px;
+}
+
+.camera-frame {
+    text-align: center;
+}
+
+#qr-reader {
+    width: 280px;
+}
+
+#qr-reader video {
+    border-radius: 8px;
+}
+
+#qr-reader__dashboard {
+    margin-top: 10px;
+}
+
+.camera-helper-text {
+    margin-top: 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+.camera-close-btn {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ff5252;
+    color: white;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    z-index: 1000;
+}

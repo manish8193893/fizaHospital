@@ -1,0 +1,204 @@
+/* Right Side section title text specifications */
+.reception-sub-title {
+  letter-spacing: 0.02rem !important;
+}
+
+/* Left Side dropdown select option filter component inputs */
+.reception-time-select {
+  display: block !important;
+  width: auto !important;
+  padding: 6px 32px 6px 12px !important;
+  /* Extended right padding padding for chevron space layout safety */
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: rgba(47, 43, 61, 0.70) !important;
+  /* #2F2B3D with 70% opacity */
+  background-color: #FFFFFF !important;
+  border: 1px solid #454852 !important;
+  cursor: pointer !important;
+  border-radius: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.reception-time-select:focus {
+  border-color: #3E64AB !important;
+  /* Highlight tint matching branding core colors on interaction fields */
+}
+
+/* Clinic Card CSS */
+
+.clinic-card {
+  position: relative;
+  background: #f4f4f4;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  min-height: 135px;
+  padding: 20px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.clinic-card:hover {
+  border-color: #b9c9ea;
+}
+
+.clinic-card.selected {
+  background: #eaf2ff;
+  border: 2px dashed #7d9dd8;
+}
+
+.selected-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: #4c6fb8;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clinic-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1E1E1F;
+  margin-bottom: 14px;
+}
+
+.clinic-doctor {
+  font-size: 14px;
+  color: #454852;
+}
+
+.clinic-patients {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0477BF !important;
+}
+
+.BookedClinic-patients {
+  font-size: 14px;
+  font-weight: 400;
+  color: #FF4C51 !important;
+}
+
+.modal-body {
+  padding: 1.5rem !important;
+}
+
+/* Add New Patients CSS */
+.reception-main-card {
+  border-radius: 8px;
+}
+
+.patient-type-card {
+  border: 2px solid #d8d6de;
+  border-radius: 6px;
+  padding: 18px;
+  min-height: 140px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #f8f8f8;
+  opacity: 0.55;
+}
+
+.patient-type-card.active {
+  border: 2px solid #7367F0;
+  background: #fff;
+  opacity: 1;
+}
+
+/* Radio */
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  border: 2px solid #c9c8d0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.patient-type-card.active .custom-radio {
+  border: 5px solid #7367F0;
+  box-shadow:
+    0 0 0 4px rgba(115, 103, 240, 0.12),
+    0 2px 8px rgba(115, 103, 240, 0.18);
+}
+
+/* Action Pop - up CSS */
+/* Custom Dropdown Styling */
+.custom-dropdown-menu {
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centers the text inside like the image mockup */
+  text-align: center;
+}
+
+.dropdown-item-btn {
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s ease;
+  text-align: center !important;
+  /* Matches the centered alignment in your mockup */
+}
+
+/* Emergency Tab CSS */
+.emergency-bed-card {
+  position: relative;
+  border: 1px solid #D9E2F2;
+  border-radius: 14px;
+  padding: 18px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.emergency-bed-card:hover:not(.occupied-bed) {
+  border-color: #3E64AB!important;
+}
+
+.emergency-selected-bed {
+  border: 1px solid #3E64AB !important;
+  background: #F7F9FF;
+}
+
+.emergency-selected-bed-text {
+  color: #3E64AB !important;
+}
+
+.emergency-selected-bed-check {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3E64AB;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emergency-selected-bed-icon svg {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(24%) saturate(1308%) hue-rotate(186deg) brightness(95%) contrast(89%);
+}
+
+.emergency-occupied-bed {
+  opacity: 0.5!important;
+  cursor: not-allowed!important;
+}

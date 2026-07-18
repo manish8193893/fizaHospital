@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Assets/Images/ShardaLogo1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharda Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/spinner.css" />
+    <style>
+      .page-loader {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+      }
+      .spinner-double {
+        position: relative;
+        width: 56px;
+        height: 56px;
+      }
+      .spinner-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: transparent;
+        transform: translate(-50%, -50%);
+      }
+      .spinner-circle--outer {
+        width: 56px;
+        height: 56px;
+        border-width: 6px;
+        border-top-color: #3E64AB;
+        border-bottom-color: #3E64AB;
+        animation: spin-cw 1s linear infinite;
+      }
+      .spinner-circle--inner {
+        width: 28px;
+        height: 28px;
+        border-width: 4px;
+        border-left-color: #3E64AB;
+        border-right-color: #3E64AB;
+        animation: spin-ccw 0.75s linear infinite;
+      }
+      @keyframes spin-cw { to { transform: translate(-50%, -50%) rotate(360deg); } }
+      @keyframes spin-ccw { to { transform: translate(-50%, -50%) rotate(-360deg); } }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="page-loader">
+        <div class="spinner-double">
+          <div class="spinner-circle spinner-circle--outer"></div>
+          <div class="spinner-circle spinner-circle--inner"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+/******************************************************
+    InPatients Form Styling
+    Purpose : Form styling for in-patients admission
+******************************************************/
+
+.formContainer {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+}
+
+.formTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 24px;
+}
+
+.formSubtitle {
+    color: #6B7280;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+/******************************************************
+    Form Rows and Groups
+******************************************************/
+
+.formRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.fullWidthGroup {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************************************
+    Labels
+******************************************************/
+
+.customLabel {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/******************************************************
+    Input Wrapper with Icons
+******************************************************/
+
+.inputWrapper {
+    position: relative;
+}
+
+.inputWrapper i {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    color: #94A3B8;
+    pointer-events: none;
+    font-size: 18px;
+}
+
+/******************************************************
+    Input Fields
+******************************************************/
+
+.customInput {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #D8E0E8;
+    border-radius: 12px;
+    padding: 0 46px 0 16px;
+    outline: none;
+    transition: 0.3s ease;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+}
+
+.customInput:focus {
+    border-color: #3E64AB;
+    box-shadow: 0 0 0 3px rgba(62, 100, 171, 0.1);
+}
+
+.customInput:disabled {
+    background-color: #F3F4F6;
+    color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+.customInput::placeholder {
+    color: #9CA3AF;
+}
+
+/******************************************************
+    Upload Box
+******************************************************/
+
+.uploadBox {
+    width: 100%;
+    height: 46px;
+    border: 2px dashed #4F8BE0;
+    border-radius: 12px;
+    background: #F9FBFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.uploadBox p {
+    color: #6B7280;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.uploadBox span {
+    color: #3E64AB;
+    font-size: 13px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+/******************************************************
+    Form Actions
+******************************************************/
+
+.formActions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #E5E7EB;
+}
+
+
+/******************************************************
+    Responsive Design
+******************************************************/
+
+@media (max-width: 768px) {
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .formActions {
+        flex-direction: column-reverse;
+    }
+
+    .nextBtn,
+    .cancelBtn {
+        width: 100%;
+    }
+
+    .formTitle {
+        font-size: 20px;
+    }
+
+    .customInput {
+        height: 44px;
+    }
+
+    .uploadBox {
+        height: 44px;
+    }
+
+    .uploadBox {
+        min-height: 100px;
+    }
+
+    .uploadBox i {
+        font-size: 28px;
+    }
+}
+
+/******************************************************
+    TinyEditor Integration
+******************************************************/
+
+.fullWidthGroup .tox-tinymce {
+    border-radius: 12px !important;
+}
+
+.fullWidthGroup .tox-tinymce-inline {
+    background-color: white !important;
+}

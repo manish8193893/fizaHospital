@@ -1,0 +1,314 @@
+/********************************************
+    Name : Manish Kumar
+    Date : 27/06/2026
+    Purpose : Scheduled Surgery Cards
+*********************************************/
+
+.scheduled-card {
+    transition: all .25s ease;
+    position: relative;
+}
+
+/********************************************
+    Status Badge
+*********************************************/
+
+.scheduled-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.scheduled-status-completed {
+    color: white !important;
+    background: #7d7f81 !important;
+}
+
+.scheduled-status-progress {
+    color: white !important;
+    background: #1FC16B !important;
+}
+
+.scheduled-status-waiting {
+    color: gray !important;
+    background: #F5F179 !important;
+}
+
+.scheduled-status-cancelled {
+    color: white !important;
+    background: #FF4C51 !important;
+}
+
+/********************************************
+    Menu
+*********************************************/
+
+.scheduled-card-menu {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scheduled-menu-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition:
+        max-height .35s ease,
+        opacity .35s ease,
+        margin-top .35s ease;
+}
+
+.scheduled-menu-icons.show {
+    max-height: 220px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+/********************************************
+    Action Buttons
+*********************************************/
+
+.scheduled-card .btn {
+    min-height: 46px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all .25s ease;
+}
+
+.log-used-item-btn {
+    color: #FF9500 !important;
+    background-color: white !important;
+    border: 1px solid #FF9500 !important;
+    border-radius: 6px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.add-report-btn {
+    color: #3E64AB !important;
+    background-color: white !important;
+    border: 1px solid #3E64AB !important;
+    border-radius: 6px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.OTCancel {
+    color: #FF4C51 !important;
+    background-color: white !important;
+    border: 1px solid #FF4C51 !important;
+    border-radius: 12px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.AddDoctor {
+    color: #0477BF !important;
+    background-color: white !important;
+    border: 1px solid #0477BF !important;
+    border-radius: 12px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.AddLogUsedItemsIcon {
+    color: #FF9500 !important;
+    background-color: white !important;
+    border: 1px solid #FF9500 !important;
+    border-radius: 12px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.AddNewSurgery {
+    color: #1FC16B !important;
+    background-color: white !important;
+    border: 1px solid #1FC16B !important;
+    border-radius: 12px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.OperationEnd {
+    color: white !important;
+    background-color: #FF4C51 !important;
+    border: none;
+    border-radius: 6px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+.OpertaionStart {
+    color: white !important;
+    background-color: #1FC16B !important;
+    border: none;
+    border-radius: 6px !important;
+    height: 45px !important;
+    padding: 10px 16px;
+}
+
+/********************************************
+    Responsive
+*********************************************/
+
+@media (max-width: 1200px) {
+
+    .scheduled-card {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .scheduled-patient-name {
+        font-size: 20px;
+    }
+
+    .scheduled-surgery-title {
+        font-size: 17px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .scheduled-card {
+        padding: 18px;
+    }
+
+    .scheduled-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .scheduled-value {
+        text-align: left !important;
+    }
+
+    .scheduled-card .btn {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .scheduled-card {
+        padding: 16px;
+    }
+
+    .scheduled-patient-name {
+        font-size: 18px;
+    }
+
+    .scheduled-surgery-title {
+        font-size: 16px;
+    }
+
+    .scheduled-status {
+        font-size: 12px;
+        padding: 5px 14px;
+    }
+
+    .scheduled-menu-btn {
+        width: 36px;
+        height: 34px;
+    }
+
+    .scheduled-menu-icons button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .scheduled-card .btn {
+        min-height: 42px;
+        font-size: 12px;
+    }
+
+}
+
+/********************************************
+    Scrollbar (Optional)
+*********************************************/
+
+.scheduled-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scheduled-card::-webkit-scrollbar-thumb {
+    background: #cfd4da;
+    border-radius: 20px;
+}
+
+.scheduled-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Chrome, Edge, Safari */
+.customTimeInput::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Remove clear button */
+.customTimeInput::-webkit-clear-button {
+    display: none;
+}
+
+/**************************************************
+    Name : Manish Kumar
+    Date : 01/06/2026
+    Purpose : SURGICAL SCHEDULED CSS
+**************************************************/
+
+.scheduled-Tab-Btn {
+    flex: 1;
+    height: 40px;
+    border: none;
+    background: #f2f2f2;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    isolation: isolate;
+    transition: color 0.2s ease;
+}
+
+.scheduled-Tab-Btn:not(:last-child) {
+    border-right: 1px solid #e6e6e6;
+}
+
+.scheduled-Tab-Text {
+    position: relative;
+    z-index: 2;
+}
+
+.scheduled-Tab-Btn.active {
+    color: white;
+}
+
+.scheduled-BgIndicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #3E64AB!important;
+    z-index: 1;
+}

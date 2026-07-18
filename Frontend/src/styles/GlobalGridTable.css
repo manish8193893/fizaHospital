@@ -1,0 +1,186 @@
+/* GlobalGridTable.css */
+
+.global-grid-wrapper {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #29252414;
+  border-radius: 6px;
+  overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
+}
+
+/* TABLE */
+
+.global-grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+/* HEADER */
+
+.global-grid-table thead {
+  background: #ffffff;
+}
+
+.global-grid-table th {
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+  background: #ffffff;
+  white-space: nowrap;
+  max-height: 48px !important;
+}
+
+/* BODY */
+
+.global-grid-table td {
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  border-bottom: 1px solid lightgray;
+  background: #ffffff;
+  vertical-align: middle;
+  height: 47px !important;
+  max-height: 48px !important;
+}
+
+.global-grid-table tbody tr:hover {
+  background: #ffffff;
+}
+
+/* HEADER CONTENT */
+
+.table-header-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sortable-icon {
+  cursor: pointer;
+}
+
+/* EMPTY STATE */
+
+.table-empty-row {
+  padding: 30px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 10px;
+  background: #ffffff;
+}
+
+/* SCROLLBAR */
+
+.global-grid-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.global-grid-wrapper::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.global-grid-wrapper::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 20px;
+}
+
+/* ACTION MENU */
+.ggt-menu-cell {
+  position: relative;
+  text-align: center;
+}
+
+.ggt-menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* THREE DOT BUTTON */
+.ggt-menu-trigger {
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ggt-menu-trigger:hover {
+  background: #f3f4f6;
+  border: 1px solid #737373;
+}
+
+.ggt-menu-trigger i {
+  font-size: 18px;
+  color: #525252;
+}
+
+.ggt-dropdown-menu {
+  position: fixed;
+  background: #ffffff;
+  border: 1px solid #f3f4f6 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), inset 0 1px 1px #ffffff;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.ggt-dropdown-item {
+  width: 100%;
+  min-width: 180px;
+  border: none !important;
+  background-color: #ffffff !important;
+  text-align: left;
+  color: #4b5563;
+  cursor: pointer;
+  border-radius: 6px 28px 28px 6px !important;
+  border-left: 4px solid #cbd5e1 !important;
+  box-shadow:
+    inset 2px 3px 6px rgba(0, 0, 0, 0.07),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.02),
+    0 1px 2px rgba(255, 255, 255, 0.8) !important;
+  background-size: 200% 100% !important;
+  background-position: right bottom !important;
+  transition:
+    background-position 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.ggt-dropdown-item:not(:last-child) {
+  border-bottom: none !important;
+}
+
+/* Disabled Interactions Override */
+.ggt-dropdown-item-disabled {
+  opacity: 0.4;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.ggt-dropdown-icon {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: inherit;
+  /* Matches parent color state transitions natively */
+}

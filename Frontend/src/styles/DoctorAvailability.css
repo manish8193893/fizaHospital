@@ -1,0 +1,339 @@
+/* DoctorAvailability.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Inter", sans-serif; */
+}
+
+.doctor-availability {
+    width: 100%;
+    /* IMPORTANT */
+    max-width: 100%;
+    /* IMPORTANT */
+    min-height: 420px;
+    display: flex;
+    border: 1px solid #d6dce8;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* LEFT SECTION */
+
+.calendar-section {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #dfe3eb;
+    min-width: 0;
+    /* IMPORTANT */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.calendar-header h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    outline: none;
+    border: none;
+    padding: 0px;
+    gap: 8px;
+    background: none !important;
+}
+
+.nav-buttons button {
+    width: 32px;
+    /* Increased slightly to accommodate font icons cleanly */
+    height: 32px;
+    border-radius: 50%;
+    background: transparent !important;
+    color: #6b7280;
+    cursor: pointer;
+    border: none;
+    outline: none !important;
+    transition: 0.2s;
+
+    /* Crucial additions for perfect centering: */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-buttons button i {
+    /* Ensures the Remix Icon fills the button space nicely */
+    font-size: 32px;
+    line-height: 1;
+    outline: none;
+    display: block;
+}
+
+/* LEGEND */
+
+.legend {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-item p {
+    font-size: 12px;
+    color: #7b8190;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5b5b;
+}
+
+.dot.gray {
+    background: #d7d7d7;
+}
+
+/* DAYS */
+
+.days-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+    justify-items: center;
+}
+
+.day-name {
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* DATES */
+
+.dates-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+}
+
+.date-cell {
+    width: 100%;
+    max-width: 38px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #374151;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+/* Hover = Light Blue */
+
+.date-cell:hover {
+    background: #3e64abb4;
+    color: white;
+}
+
+/* Selected = Dark Blue */
+
+.date-cell.selected {
+    background: #3E64AB;
+    color: white;
+    font-weight: 600;
+}
+
+/* Previous / Next Month */
+
+.date-cell.inactive {
+    color: #c9ced8;
+    cursor: default;
+}
+
+/* Unavailable */
+
+.date-cell.unavailable {
+    background: #ffe5e5;
+    color: #ff5b5b;
+}
+
+/* Day Off */
+
+.date-cell.dayoff {
+    background: #efefef;
+    color: #7a7a7a;
+}
+
+/* RIGHT SECTION */
+
+.time-picker-section {
+    width: 180px;
+    /* REDUCED */
+    min-width: 180px;
+    padding: 20px 14px;
+    max-height: fit-content;
+}
+
+.time-picker-section h4 {
+    text-align: center;
+    margin-bottom: 16px;
+    color: #4b5563;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.selected-time-box {
+    height: 40px;
+    border: 1px solid #dbe1ea;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.time-slots {
+    max-height: 285px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.time-slot {
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: 0.2s;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+/* Hover = Light Purple */
+
+.time-slot:hover {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+/* Selected = Dark Purple */
+
+.time-slot.active-time {
+    background: #5B3CC4;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Scrollbar */
+
+.time-slots::-webkit-scrollbar {
+    width: 5px;
+}
+
+.time-slots::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 20px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .doctor-availability {
+        flex-direction: column;
+    }
+
+    .calendar-section {
+        border-right: none;
+        border-bottom: 1px solid #dfe3eb;
+    }
+
+    .time-picker-section {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .date-cell {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+}
+
+/* Disabled Dates */
+
+.disabled-date {
+    background: var(--bs-secondary-bg) !important;
+    color: var(--bs-secondary-color) !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+    border-radius: 50%;
+}
+
+/* Remove Hover */
+
+.disabled-date:hover {
+    background: var(--bs-secondary-bg) !important;
+    color: var(--bs-secondary-color) !important;
+}
+
+/* Disabled Time Slots */
+
+.disabled-time {
+    background: var(--bs-secondary-bg) !important;
+    color: var(--bs-secondary-color) !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+}
+
+/* Remove Hover */
+
+.disabled-time:hover {
+    background: var(--bs-secondary-bg) !important;
+    color: var(--bs-secondary-color) !important;
+}
+
+/* Disabled Navigation Buttons */
+
+.disabled-nav {
+    background: var(--bs-secondary-bg) !important;
+    color: var(--bs-secondary-color) !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+}
+
+.disabled-nav:hover {
+    background: var(--bs-secondary-bg) !important;
+    color: var(--bs-secondary-color) !important;
+}
