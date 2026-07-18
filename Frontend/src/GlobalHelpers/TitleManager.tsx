@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { sidebarMenuOptions } from "../data/sidebarOptions";
 
 const findTitle = (pathname: string): string => {
-    let matchedTitle = "HMS";
+    let matchedTitle = "Fiza Hospital";
     let longestMatch = 0;
 
     for (const item of sidebarMenuOptions.menuItems) {
@@ -38,7 +38,7 @@ const TitleManager = () => {
 
     useEffect(() => {
         const title = findTitle(location.pathname);
-        document.title = title === "HMS" ? "HMS" : `${title}`;
+        document.title = title === "Fiza Hospital" ? "Fiza Hospital" : `${title}`;
     }, [location.pathname]);
 
     return null;

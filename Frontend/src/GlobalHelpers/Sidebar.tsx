@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
     <aside className="sidebar bg-white border-end">
       <div className="sidebar-header d-flex justify-content-center align-items-center">
         <img
-          src="/Assets/Images/ApnaHospital.png"
+          src="/Assets/Images/FizaHospital.png"
           alt="Hospital Logo"
           className="hospital-logo-img"
         />

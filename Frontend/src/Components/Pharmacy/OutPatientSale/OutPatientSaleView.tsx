@@ -336,7 +336,7 @@ interface SelectedMedicine extends Medicine {
 
 const PATIENT_PRINT_DETAILS = [
     { label: "Patient Name", value: "Manish Kashyap" },
-    { label: "Doctor", value: "Mr.Shivam Saini" },
+    { label: "Doctor", value: "Miss. Fiza Hassan" },
     { label: "Mobile", value: "8742970516" },
     { label: "Department", value: "General Medicine" },
     { label: "Email", value: "manish8193892@gmail.com" },
@@ -1104,7 +1104,7 @@ export function DrugModal({
                                     ))}
                                 </div>
                                 <img
-                                    src="/Assets/Images/ShardaHospitalLogo.png"
+                                    src="/Assets/Images/FizaHospital.png"
                                     alt="Sharda Hospital"
                                     className="op-sale-print-logo"
                                 />

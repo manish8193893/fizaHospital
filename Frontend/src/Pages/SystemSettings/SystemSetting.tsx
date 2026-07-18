@@ -7,7 +7,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import ShardaLogo from "../../../public/Assets/Images/ShardaLogo1.png";
+import FizaHospitalLogo from "../../../public/Assets/Images/FizaHospitalLogo.png";
 
 import Stepper from "../../Components/Stepper/Stepper";
 import CustomFormDropdown from "../../GlobalHelpers/CustomFormDropdown";
@@ -374,7 +374,7 @@ const SystemSettings = () => {
 
                 <h2 className={`${styles.heading} mb-0`}>
                     <img
-                        src={ShardaLogo}
+                        src={FizaHospitalLogo}
                         alt="Sharda University Logo"
                         className={`${styles.logo}`}
                     />

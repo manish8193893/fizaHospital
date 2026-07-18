@@ -68,8 +68,8 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
           {/* Desktop View */}
           <div className="desktop-actions d-flex justify-content-between align-items-center gap-3">
             <div className="user-profile">
-              <span className="header-avatar">M</span>
-              <div className="user-name">Manish Kashyap</div>
+              <span className="header-avatar">F</span>
+              <div className="user-name">Fiza Hassan</div>
             </div>
 
             <i className="ri-moon-line theme-toggle-btn" />
@@ -88,8 +88,8 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
             onClick={() => setShowProfileMenu(!showProfileMenu)}
           >
             <div className="profile-box">
-              <span className="header-avatar text-white">M</span>
-              <span>Manish Kashyap</span>
+              <span className="header-avatar text-white">F</span>
+              <span>Fiza Hassan</span>
               <i className="ri-arrow-down-s-line" />
             </div>
 
