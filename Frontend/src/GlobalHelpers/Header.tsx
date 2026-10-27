@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { useSidebar } from '../contexts/SidebarContext';
+import { useAuth } from '../contexts/AuthContext';
 
 import '../styles/Header.css';
 import ConfirmationModal from "../GlobalHelpermodal/GlobalHelperModal";
@@ -12,10 +14,19 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
   const { sidebarVisible, toggleSidebar } = useSidebar();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const profileRef = useRef<HTMLDivElement>(null);
   const [darkMode, setDarkMode] = useState(false);
+  const displayName = user?.name?.trim() || "User";
+  const userInitial = displayName.charAt(0).toUpperCase();
+
+  const handleLogout = async () => {
+    await logout();
+    navigate("/login", { replace: true });
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -68,8 +79,8 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
           {/* Desktop View */}
           <div className="desktop-actions d-flex justify-content-between align-items-center gap-3">
             <div className="user-profile">
-              <span className="header-avatar">F</span>
-              <div className="user-name">Fiza Hassan</div>
+              <span className="header-avatar" aria-label={`${displayName} profile`}>{userInitial}</span>
+              <div className="user-name">{displayName}</div>
             </div>
 
             <i className="ri-moon-line theme-toggle-btn" />
@@ -77,7 +88,13 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
             <i className="ri-notification-2-line fs-24 text-muted" />
             <i
               className="ri-logout-circle-r-line fs-24 text-danger"
+              role="button"
+              tabIndex={0}
+              aria-label="Log out"
               onClick={() => setShowConfirmationModal(true)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") setShowConfirmationModal(true);
+              }}
             />
           </div>
 
@@ -88,8 +105,8 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
             onClick={() => setShowProfileMenu(!showProfileMenu)}
           >
             <div className="profile-box">
-              <span className="header-avatar text-white">F</span>
-              <span>Fiza Hassan</span>
+              <span className="header-avatar text-white">{userInitial}</span>
+              <span>{displayName}</span>
               <i className="ri-arrow-down-s-line" />
             </div>
 
@@ -120,7 +137,10 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
                 <i className="ri-customer-service-2-line" />
                 Support Center
               </div>
-              <div className="profile-item logout" onClick={() => setShowConfirmationModal(true)}>
+              <div className="profile-item logout" onClick={(event) => {
+                event.stopPropagation();
+                setShowConfirmationModal(true);
+              }}>
                 <i className="ri-logout-box-r-line" />
                 Log Out
               </div>
@@ -134,6 +154,7 @@ const Header: React.FC<HeaderProps> = ({ heading, subHeading }) => {
         show={showConfirmationModal}
         handleClose={() => setShowConfirmationModal(false)}
         variant="logout"
+        onConfirm={() => { void handleLogout(); }}
       />
     </>
   );

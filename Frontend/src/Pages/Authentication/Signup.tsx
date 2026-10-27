@@ -1,12 +1,65 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useAuth } from "../../contexts/AuthContext";
+import api, { getApiErrorMessage } from "../../services/api";
+import ConfirmationModal from "../../GlobalHelpermodal/GlobalHelperModal";
 import "../../styles/signup.css";
 
 export default function Signup() {
 
     const [showPassword, setShowPassword] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
     const navigate = useNavigate();
+    const { refreshSession } = useAuth();
+
+    const handleSuccessModalClose = async () => {
+        setShowSuccessModal(false);
+        const authenticated = await refreshSession();
+        if (authenticated) {
+            navigate("/dashboard", { replace: true });
+        } else {
+            navigate("/login", {
+                replace: true,
+                state: { notice: "Account created successfully. Please log in." },
+            });
+        }
+    };
+
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError("");
+        setIsSubmitting(true);
+
+        try {
+            await api.post("/auth/register", { name, email, password });
+            setShowSuccessModal(true);
+        } catch (requestError) {
+            const authenticated = await refreshSession();
+            if (authenticated) {
+                navigate("/dashboard", { replace: true });
+                return;
+            }
+
+            const message = getApiErrorMessage(requestError, "Unable to create your account. Please try again.");
+            if (message.toLowerCase().includes("user already exists")) {
+                navigate("/login", {
+                    replace: true,
+                    state: { notice: "An account with this email already exists. Please log in." },
+                });
+                return;
+            }
+
+            setError(message);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div className="signup-page d-flex">
@@ -35,7 +88,8 @@ export default function Signup() {
                     </div>
 
                     {/* FORM */}
-                    <form>
+                    <form onSubmit={handleSubmit}>
+                        {error && <div className="alert alert-danger" role="alert">{error}</div>}
 
                         {/* USERNAME */}
                         <div className="mb-3">
@@ -49,6 +103,10 @@ export default function Signup() {
                                     className="form-control custom-input"
                                     id="username"
                                     placeholder="Enter your username"
+                                    autoComplete="username"
+                                    required
+                                    value={name}
+                                    onChange={(event) => setName(event.target.value)}
                                 />
 
                                 <i className="ri-at-line input-icon"></i>
@@ -67,6 +125,10 @@ export default function Signup() {
                                     className="form-control custom-input"
                                     id="email"
                                     placeholder="Enter your email"
+                                    autoComplete="email"
+                                    required
+                                    value={email}
+                                    onChange={(event) => setEmail(event.target.value)}
                                 />
 
                                 <i className="ri-mail-line input-icon"></i>
@@ -85,6 +147,10 @@ export default function Signup() {
                                     className="form-control custom-input"
                                     id="password"
                                     placeholder="Enter your password"
+                                    autoComplete="new-password"
+                                    required
+                                    value={password}
+                                    onChange={(event) => setPassword(event.target.value)}
                                 />
                                 <i
                                     className={`${showPassword
@@ -98,8 +164,8 @@ export default function Signup() {
                         </div>
 
                         {/* BUTTON */}
-                        <button type="submit" className="signup-btn">
-                            Sign Up
+                        <button type="submit" className="signup-btn" disabled={isSubmitting}>
+                            {isSubmitting ? "Creating account…" : "Sign Up"}
                         </button>
 
                         {/* FOOTER */}
@@ -145,6 +211,14 @@ export default function Signup() {
                 </div>
 
             </div>
+            <ConfirmationModal
+                show={showSuccessModal}
+                handleClose={() => { void handleSuccessModalClose(); }}
+                variant="confirm"
+                title="Account created"
+                message="Account created successfully!"
+                description="Welcome to Fiza Hospital. Your account is ready."
+            />
         </div>
     );
 }

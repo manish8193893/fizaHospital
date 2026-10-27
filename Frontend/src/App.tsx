@@ -1,6 +1,7 @@
-import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 
 import { SidebarProvider } from './contexts/SidebarContext';
+import { useAuth } from './contexts/AuthContext';
 import TitleManager from './GlobalHelpers/TitleManager';
 import DashboardLayout from './layouts/DashboardLayout';
 
@@ -137,11 +138,43 @@ import RolePrivilegs from './Pages/SystemSettings/RolePrivilegs';
 import NotFound from './Pages/NotFound';
 
 function ProtectedLayout() {
+  const { isLoading, user } = useAuth();
+  const location = useLocation();
+
+  if (isLoading) {
+    return <div className="auth-loading d-flex align-items-center justify-content-center min-vh-100" role="status">Checking your session…</div>;
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace state={{ from: location }} />;
+  }
+
   return (
     <DashboardLayout>
       <Outlet />
     </DashboardLayout>
   );
+}
+
+function PublicOnlyLayout() {
+  const { isLoading, user } = useAuth();
+
+  if (isLoading) {
+    return <div className="auth-loading d-flex align-items-center justify-content-center min-vh-100" role="status">Checking your session…</div>;
+  }
+
+  return user ? <Navigate to="/dashboard" replace /> : <Outlet />;
+}
+
+function RequireAuth() {
+  const { isLoading, user } = useAuth();
+  const location = useLocation();
+
+  if (isLoading) {
+    return <div className="auth-loading d-flex align-items-center justify-content-center min-vh-100" role="status">Checking your session…</div>;
+  }
+
+  return user ? <Outlet /> : <Navigate to="/login" replace state={{ from: location }} />;
 }
 
 
@@ -152,13 +185,17 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
 
         {/* Authentication */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/email-verification" element={<EmailVerification />} />
+        <Route element={<PublicOnlyLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/email-verification" element={<EmailVerification />} />
+        </Route>
 
 
         <Route element={<ProtectedLayout />}>
